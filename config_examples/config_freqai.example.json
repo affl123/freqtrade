@@ -54,6 +54,7 @@
         "backtest_period_days": 7,
         "live_retrain_hours": 0,
         "identifier": "unique-id",
+        "warn_exceptions_on_backtest_only": true,
         "feature_parameters": {
             "include_timeframes": [
                 "3m",
