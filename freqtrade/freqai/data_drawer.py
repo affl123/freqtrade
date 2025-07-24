@@ -301,8 +301,8 @@ class FreqaiDataDrawer:
         hist_preds = self.historic_predictions[pair].copy()
 
         # ensure both dataframes have the same date format so they can be merged
-        new_pred["date_pred"] = pd.to_datetime(new_pred["date_pred"])
-        hist_preds["date_pred"] = pd.to_datetime(hist_preds["date_pred"])
+        new_pred["date_pred"] = pd.to_datetime(new_pred["date_pred"]).dt.tz_localize(None)
+        hist_preds["date_pred"] = pd.to_datetime(hist_preds["date_pred"]).dt.tz_localize(None)
 
         # find the closest common date between new_pred and historic predictions
         # and cut off the new_pred dataframe at that date
